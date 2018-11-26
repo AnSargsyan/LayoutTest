@@ -22,13 +22,13 @@
 
 		var counter = 0;
 
-		 function select(ev){
+		 function select(e){
  
 		 	$(nav_item[counter]).css('background-image', '');
 		 	$(tab_item[counter]).removeAttr('selected', '')
 		 	
-			$(ev.currentTarget).css('background-image', 'linear-gradient(to bottom, rgba(255,255,255,.8)  0%,rgba(255,255,255,.3) 100%)');
-			var index = myArr.indexOf(ev.currentTarget);
+			$(e.currentTarget).css('background-image', 'linear-gradient(to bottom, rgba(255,255,255,.8)  0%,rgba(255,255,255,.3) 100%)');
+			var index = myArr.indexOf(e.currentTarget);
 			counter = index;
 			$(tab_item[index]).attr('selected', '')
 	 	}		
