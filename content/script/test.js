@@ -5,33 +5,28 @@
 
 	for(let i = 0;  i < tab_item.length; i++) {
 	     $(`<li>`).text($(tab_item[i]).attr('name')).appendTo($('ul#nav_item'));
-	     var nav_item = $('li');
-	}
-
-	$(`<i>`).text('home').attr('class', 'material-icons').appendTo($('li:nth-child(1)'));
-	$(`<i>`).text('phone_forwarded').attr('class', 'material-icons').appendTo($('li:nth-child(4)'));
+	     var nav_item = $('li');	
 
 	var myArr = [];
 
 	for(let j = 0;  j < nav_item.length; j++) {
 	    nav_item[j].addEventListener('click', select);
 	    myArr.push(nav_item[j]);
+
 	}
-
-		$(nav_item[0]).css('background-image', 'linear-gradient(to bottom, rgba(255,255,255,.8)  0%,rgba(255,255,255,.3) 100%)');
-
-		var counter = 0;
+		var counter;
 
 		 function select(e){
  
-		 	$(nav_item[counter]).css('background-image', '');
+		 	$(nav_item[counter]).removeAttr('selected', 'selected')
 		 	$(tab_item[counter]).removeAttr('selected', '')
 		 	
-			$(e.currentTarget).css('background-image', 'linear-gradient(to bottom, rgba(255,255,255,.8)  0%,rgba(255,255,255,.3) 100%)');
+			$(e.currentTarget).attr('selected', 'selected')
 			var index = myArr.indexOf(e.currentTarget);
 			counter = index;
 			$(tab_item[index]).attr('selected', '')
-	 	}		
+	 	}	
+	}	
 }
 // console.log($('[myId="home"]')[0]);
 
