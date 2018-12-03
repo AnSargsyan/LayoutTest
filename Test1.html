@@ -36,7 +36,7 @@
                     </div>
                 </wrapper>
                 <wrapper class="tab">
-                    <div  name="home" class="main">
+                    <div selected="selected"  name="home" class="main">
                         <div class="column">
                             <section large>
                                 <navigation>
@@ -506,15 +506,15 @@
                         </div>
                     </div>  
                     <!-- <form> -->
-                    <div selected="selected" name="Sign in" class="main">
+                    <!-- <div selected="selected" name="Sign in" class="main">
                         <section class="sec_sign">
                             <signin class="signin">
-                                <!-- <div class="input"><label for="Username"><i class="material-icons">person</i></label>
+                                <div class="input"><label for="Username"><i class="material-icons">person</i></label>
                                     <input type="text" placeholder="Username" title="Username" id="Username"/></div>
                                 <div class="input"><label for="Password"><i class="material-icons">lock</i></label>
                                     <input type="password" placeholder="Password" title="Password" id="Password"/></div>
                                 <div class="input submit"><input type="submit" value="Sign in"></div> -->
-                            </signin>
+                            <!-- </signin>
                             <signup class="signup">
                                     <div class="input"><label for="Username"><i class="material-icons">person</i></label>
                                         <input type="text" placeholder="Username" title="Username" id="Username"/></div>
@@ -523,8 +523,82 @@
                                     <div class="input submit"><input type="submit" value="Sign in"></div>
                             </signup>
                         </section>
-                    </div>
+                    </div> -->
                 <!-- </form>  -->
+
+                    <div name="Sign in" class="main">
+                      <div class="column">
+                        <div class="box">
+                            <usericon>
+                              
+                            </usericon>
+                            <form radius>
+                                <div class="group">    
+                                    <input type="text" required>
+                                    <span class="high"></span>
+                                    <!-- <line class="bar"></line> -->
+                                    <label>Username</label>
+                                </div>
+                                <div class="group">       
+                                    <input type="password" required>
+                                    <span class="high"></span>
+                                    <!-- <line class="bar"></line> -->
+                                    <label>Password</label>
+                                </div>
+                                <div><input submit type="submit" value="Sign In"></div>
+                            </form>
+                        </div>
+                        <div class="box">
+                                <form>
+                                  <div class="col">
+                                    <div class="group">    
+                                        <input type="text" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Firstname</label>
+                                    </div>
+                                    <div class="group">       
+                                        <input type="text" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Lastname</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div largebox class="group">       
+                                        <input type="text" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Username</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div largebox class="group">       
+                                        <input type="text" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Email</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="group">       
+                                        <input type="password" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="group">       
+                                        <input type="password" required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Confirm Password</label>
+                                    </div>
+                                  </div>
+                                  <div><input submit type="submit" value="Sign Up"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </wrapper>
             </wrapper>
         </container>
