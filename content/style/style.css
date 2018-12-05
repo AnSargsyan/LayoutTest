@@ -242,32 +242,42 @@ form[radius] {
     flex: 2;
 }
 
+form[radius] label {
+    transform: translate(0);
+}
 form[radius] input {
     border-radius: 5px;
 }
 
 .group { 
-    position:relative; 
-    margin: 15px; 
+    display: flex;
+    position: relative;
+    margin: 15px;
+    align-items: center;
+    height: 40px;
 }
 
 input {
-    font-size: 15px;
-    padding: 11px 20px;
-    display: block;
+    font-size: 15px; 
+    padding: 0 5px; 
+    display: flex;
     border: none;
-    border-bottom: 1px solid #757575;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* border-bottom: 1px solid #757575; */
+    height: 100%;
+    /*background-color: green;*/
 }
 
 input:focus { 
     outline: none;
 }
   
-input:focus ~ label, input:valid ~ label {
+/*input:focus ~ label {
     top: -20px;
     font-size: 14px;
     color: #3e5e7a;
-}
+}*/
 
 form[radius] input:focus ~ label, form[radius] input:valid ~ label {
     top: 0px;
@@ -275,22 +285,28 @@ form[radius] input:focus ~ label, form[radius] input:valid ~ label {
     color: #2b3844;
 }    
 
-line { 
-    position:relative; 
-    display:block; 
-}
-
-line:before, line:after {
+line, .bar {
     content: '';
     height: 1px; 
-    width: 0;
+    width: 100%;
     bottom: 1px; 
     position: absolute;
-    background: #5264AE; 
+    background: grey; 
     transition: .2s ease all; 
 }
 
-line:before {
+input:focus ~ .bar {
+    transform: none;
+}
+.bar {
+    transition: .2s ease all; 
+    transform: scaleX(0);
+    transform-origin: left 0;
+    height: 2px; 
+    background: #144baa;
+}
+
+/*line:before {
     left:50%;
 }
 line:after {
@@ -299,7 +315,7 @@ line:after {
 
 input:focus ~ line:before, input:focus ~ line:after {
     width:50%;
-}
+}*/
 
 form[radius] input[submit], input[submit] {
     padding: 5px 15px;
@@ -318,37 +334,39 @@ input[submit] {
 }
   
 label {
-    color: #999; 
-    font-size: 16px;
+    display: flex;
+    color: #345471;
+    /* justify-content: center; */
+    /* align-items: center; */
     position: absolute;
     pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: .2s ease all; 
+    height: 50%;
+    padding: 0 5px;
+    transform: translateY(-150%);
+    /*transform: scale(1.5);*/
+     /*background-color: red; */
+    transition: .2s ease all;
 }
 
 input:placeholder-shown ~ label {
-    left: 5px;
-    top: 10px;
+    transform: none;
     color: #999;
 }
 
 input::placeholder {
+    padding: 5px;
     color: #999;
 }
 
 input:not([placeholder=' ']):placeholder-shown ~ label {
-    left: 5px;
-    top: 10px;
-    color: #999;
     opacity: 0;
 }
- input:focus ~ label {
+/* input:focus ~ label {
     top: -20px;
     font-size: 14px;
     color: #3e5e7a;  
     transition: .2s ease all; 
- }
+ }*/
 
 usericon {
     flex: .4;
