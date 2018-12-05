@@ -2,11 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border:1px solid red !important; */
+    /*box-shadow: 0 0 1px 0 red;*/
 }
 
-body, input, label, input::placeholder {
-    font-family: "Segoe UI";
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 html, body, main {
@@ -101,8 +102,11 @@ navigation {
 }
 
 navigation #nav_item li {
-    display: flex; 
-    padding: 5px 15px;
+    display: flex;
+    height: 30px;
+    font-size: 14px;
+    width: 80px;
+    margin: 1px;
     justify-content: center;
     align-items: center;
     list-style-type: none;
@@ -168,7 +172,7 @@ navigation li:active, input[type=submit]:active  {
 
 .menu p {
     padding: 15px;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .nav_menu p:hover {
@@ -177,8 +181,6 @@ navigation li:active, input[type=submit]:active  {
 
 .nav_menu p {
     display: flex;
-    font-size: 14px;
-    /* align-items: center; */
     justify-content: center;
     padding: 10px;
     box-shadow: inset 0 -7px 8px -11px white;
@@ -187,11 +189,15 @@ navigation li:active, input[type=submit]:active  {
 .column {
     display: flex;
     flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+div[formbox] {
+    margin: 10px;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
-    /*border-radius: 10px;*/
 }
 
 ::-webkit-scrollbar-track {
@@ -211,42 +217,30 @@ navigation li:active, input[type=submit]:active  {
 .box:nth-child(1) {
     flex: 1;
     flex-direction: column;
-    background-color: #595861;
+    background-color: #d84a24;
 }
 
 .box:nth-child(2) {
-    flex: 3;
+    flex: 2;
+    padding: 20px 40px;
 }
 .box { 
     display: flex;
-    justify-content: center;
-    align-content: center;
     background: #FFF;
-    /*padding: 10px;*/
 }
+
 div[largebox], div[largebox] input {
     width: 100%;
 }
 
 .col {
     display: flex;
-    /*flex-direction: column;*/
 }
 
 form {
-    padding: 10px;
     flex-direction: column;
     display: flex;
-}
-form[radius] {
-    flex: 2;
-}
-
-form[radius] label {
-    transform: translate(0);
-}
-form[radius] input {
-    border-radius: 5px;
+    width: 100%;
 }
 
 .group { 
@@ -255,41 +249,27 @@ form[radius] input {
     margin: 15px;
     align-items: center;
     height: 40px;
+    width: 100%;
+    box-shadow: 0px 1px 0px 0px #d0d0d0;
 }
 
 input {
-    font-size: 15px; 
+    font-size: 12px; 
     padding: 0 5px; 
     display: flex;
     border: none;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* border-bottom: 1px solid #757575; */
+    width: 100%;
     height: 100%;
-    /*background-color: green;*/
 }
 
 input:focus { 
     outline: none;
 }
-  
-/*input:focus ~ label {
-    top: -20px;
-    font-size: 14px;
-    color: #3e5e7a;
-}*/
 
-form[radius] input:focus ~ label, form[radius] input:valid ~ label {
-    top: 0px;
-    font-size: 11px;
-    color: #2b3844;
-}    
-
-line, .bar {
-    content: '';
+line  {
     height: 1px; 
     width: 100%;
-    bottom: 1px; 
+    bottom: 0; 
     position: absolute;
     background: grey; 
     transition: .2s ease all; 
@@ -302,49 +282,39 @@ input:focus ~ .bar {
     transition: .2s ease all; 
     transform: scaleX(0);
     transform-origin: left 0;
-    height: 2px; 
+    height: 1px; 
     background: #144baa;
 }
 
-/*line:before {
-    left:50%;
-}
-line:after {
-    right:50%; 
-}
-
-input:focus ~ line:before, input:focus ~ line:after {
-    width:50%;
-}*/
-
-form[radius] input[submit], input[submit] {
-    padding: 5px 15px;
+input[submit] {
+    height: 25px;
+    width: 70px;
     cursor: pointer;
     user-select: none;
     border-radius: 30px;
-    margin: 15px 0 0 155px;
-    background-color: #202c36;
+    justify-content: center;
+    background-color: #d84a24;
     color: #fff;
-    border-bottom: none;
 }
 
-input[submit] {
-    margin: 15px 0 0 395px;
-    background-color: #d84a24;
+div[push] {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
 }
   
 label {
     display: flex;
     color: #345471;
-    /* justify-content: center; */
-    /* align-items: center; */
+    font-size: 13px;
+    justify-content: center; 
+    align-items: center; 
     position: absolute;
     pointer-events: none;
     height: 50%;
     padding: 0 5px;
-    transform: translateY(-150%);
-    /*transform: scale(1.5);*/
-     /*background-color: red; */
+    transform: translateY(-150%) scale(.85);
+    transform-origin: left;
     transition: .2s ease all;
 }
 
@@ -361,82 +331,3 @@ input::placeholder {
 input:not([placeholder=' ']):placeholder-shown ~ label {
     opacity: 0;
 }
-/* input:focus ~ label {
-    top: -20px;
-    font-size: 14px;
-    color: #3e5e7a;  
-    transition: .2s ease all; 
- }*/
-
-usericon {
-    flex: .4;
-    display: flex;
-    justify-content: center;
-    background-image: url(../image/user.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 5px auto;
-    width: 65px;
-}
-
-
-/*
-.inp input:focus + span + .border {
-    transform: scaleX(1);
-}
-*/
-/* 
-signin, signup {
-    display: flex;
-    position: relative;
-    margin-bottom: 45px;
-    /* flex-direction: column; */
-    /* background-color: rgb(14, 23, 51); */
-    /* height: 100%;
-    width: 100%; */
-    /* padding: 50px 0; */
-/* } */
-/* signin {
-    border-radius: 10px 0 0 10px;
-    background-color: #ffffff4d;
-    flex: 2;
-}
-signup {
-    flex: 3;
-    background-color: #fff;
-    border-radius: 0 10px 10px 0;
-} */
-/* .sec_sign {
-    flex-direction: row;
-}
-.input {
-    display: flex;
-    margin: 10px;
-    box-shadow: 0 6px 4px -7px #000000;
-}
-
-.submit {
-    padding: 25px;
-    box-shadow: none;
-} */
-
-
-/*.high {
-    position:absolute;
-    height:60%; 
-    width:100px; 
-    top:25%; 
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-}*/
-
-/*input:focus ~ .high {
-    animation:inputHigh .4s ease-in;
-}*/
-
-/*@keyframes inputHigh {
-    from { height: 0%; width:0%; background:rgba(82, 100, 174, 0.849); }
-    75% { height: 50%; width:50%; background:rgba(82, 100, 174, 0.719); }
-    to { height: 100%; width:100%; background:transparent; }
-}*/
