@@ -5,7 +5,7 @@
     /* border:1px solid red !important; */
 }
 
-body {
+body, input, label, input::placeholder {
     font-family: "Segoe UI";
 }
 
@@ -114,16 +114,20 @@ navigation #nav_item li {
 navigation li[selected] {
     background-color: #d84a24;
 }
+
 navigation li:hover {
     background-color: #e67556;
 }
+
 navigation li:active, input[type=submit]:active  {
     transform: translateY(1px);
 
 }
+
 .tab {
     flex: 5;
 }
+
 .main {
     flex: 1;
     flex-direction: column;
@@ -161,10 +165,12 @@ navigation li:active, input[type=submit]:active  {
     box-shadow: inset -4px 0 10px -10px white;
     user-select: none;
 }
+
 .menu p {
     padding: 15px;
     font-size: 16px;
 }
+
 .nav_menu p:hover {
    background-color: #ffffff38;
 }
@@ -177,10 +183,12 @@ navigation li:active, input[type=submit]:active  {
     padding: 10px;
     box-shadow: inset 0 -7px 8px -11px white;
 }
+
 .column {
     display: flex;
     flex: 1;
 }
+
 ::-webkit-scrollbar {
     width: 5px;
     /*border-radius: 10px;*/
@@ -199,6 +207,7 @@ navigation li:active, input[type=submit]:active  {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
 .box:nth-child(1) {
     flex: 1;
     flex-direction: column;
@@ -224,7 +233,6 @@ div[largebox], div[largebox] input {
     /*flex-direction: column;*/
 }
 
-  
 form {
     padding: 10px;
     flex-direction: column;
@@ -252,23 +260,13 @@ input {
 }
 
 input:focus { 
-      outline:none;
-}
-  
-label {
-    color:#999; 
-    font-size:16px;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:10px;
-    transition:0.2s ease all; 
+    outline: none;
 }
   
 input:focus ~ label, input:valid ~ label {
-    top:-20px;
-    font-size:14px;
-    color:#3e5e7a;
+    top: -20px;
+    font-size: 14px;
+    color: #3e5e7a;
 }
 
 form[radius] input:focus ~ label, form[radius] input:valid ~ label {
@@ -283,16 +281,15 @@ line {
 }
 
 line:before, line:after {
-    content:'';
-    height:1px; 
-    width:0;
-    bottom:1px; 
-    position:absolute;
-    background:#5264AE; 
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
+    content: '';
+    height: 1px; 
+    width: 0;
+    bottom: 1px; 
+    position: absolute;
+    background: #5264AE; 
+    transition: .2s ease all; 
 }
+
 line:before {
     left:50%;
 }
@@ -300,27 +297,8 @@ line:after {
     right:50%; 
 }
 
-/* active state */
 input:focus ~ line:before, input:focus ~ line:after {
     width:50%;
-}
-.high {
-position:absolute;
-height:60%; 
-width:100px; 
-top:25%; 
-left:0;
-pointer-events:none;
-opacity:0.5;
-}
-
-input:focus ~ .high {
-animation:inputHigh 0.3s ease;
-}
-
-@keyframes inputHigh {
-    from { background:#5264AE; }
-to 	{ width:0; background:transparent; }
 }
 
 form[radius] input[submit], input[submit] {
@@ -333,10 +311,45 @@ form[radius] input[submit], input[submit] {
     color: #fff;
     border-bottom: none;
 }
+
 input[submit] {
     margin: 15px 0 0 395px;
     background-color: #d84a24;
 }
+  
+label {
+    color: #999; 
+    font-size: 16px;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: .2s ease all; 
+}
+
+input:placeholder-shown ~ label {
+    left: 5px;
+    top: 10px;
+    color: #999;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+input:not([placeholder=' ']):placeholder-shown ~ label {
+    left: 5px;
+    top: 10px;
+    color: #999;
+    opacity: 0;
+}
+ input:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #3e5e7a;  
+    transition: .2s ease all; 
+ }
+
 usericon {
     flex: .4;
     display: flex;
@@ -349,6 +362,11 @@ usericon {
 }
 
 
+/*
+.inp input:focus + span + .border {
+    transform: scaleX(1);
+}
+*/
 /* 
 signin, signup {
     display: flex;
@@ -383,3 +401,24 @@ signup {
     padding: 25px;
     box-shadow: none;
 } */
+
+
+/*.high {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}*/
+
+/*input:focus ~ .high {
+    animation:inputHigh .4s ease-in;
+}*/
+
+/*@keyframes inputHigh {
+    from { height: 0%; width:0%; background:rgba(82, 100, 174, 0.849); }
+    75% { height: 50%; width:50%; background:rgba(82, 100, 174, 0.719); }
+    to { height: 100%; width:100%; background:transparent; }
+}*/
