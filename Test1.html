@@ -34,7 +34,7 @@
                     </div>
                 </wrapper>
                 <wrapper class="tab">
-                    <div selected="selected" name="home" class="main">
+                    <div name="home" class="main">
                         <div class="column">
                             <section large>
                                 <navigation>
@@ -502,18 +502,16 @@
                             </section>
                         </div>
                     </div>
-                    <div name="Sign in" class="main">
+                    <div  selected="selected" name="Sign in" class="main">
                       <div formbox class="column">
-                        <scroller>
-                          <div some>
-                            <div class="box">
-                            </div>
-                            <div class="box">
+                          <div small class="box">
+                             <scroller>
+                              <wrap>
                                 <form>
                                   <div class="col">
                                     <div class="group">    
                                         <input type="text" placeholder=" " required>
-                                        <!-- <span class="high"></span> -->
+                                        <span class="high"></span>
                                         <line class="bar"></line>
                                         <label>Firstname</label>
                                     </div>
@@ -523,11 +521,98 @@
                                         <line class="bar"></line>
                                         <label>Lastname</label>
                                     </div>
+                                    </div>
+                                  <div class="col">
+                                    <div largebox class="group">       
+                                        <input type="text" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Username</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div largebox class="group">       
+                                        <input type="email" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Email</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
                                     <div class="group">       
+                                        <input type="password" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="group">       
+                                        <input type="password" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Confirm Password</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="group">       
+                                        <input type="text" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Phone Number</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="group">       
+                                        <input type="password" placeholder=" " required>
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Other Phone Number</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                  <div class="group">       
                                       <input type="text" placeholder="text">
                                       <!-- <span class="high"></span> -->
                                       <line class="bar"></line>
                                       <label>some</label>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="group">    
+                                        <input type="text" placeholder=" " required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Firstname</label>
+                                    </div>
+                                    <div class="group">       
+                                        <input type="text" placeholder=" " >
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Lastname</label>
+                                    </div>
+                                    </div>
+                                </form>
+                              </wrap>
+                            </scroller>
+                            <div push class="col">
+                              <input submit type="submit" value="Sign Up">
+                            </div>
+                          </div>
+                          <div large class="box">
+                            <scroller>
+                              <wrap>
+                                <form>
+                                  <div class="col">
+                                    <div class="group">    
+                                        <input type="text" placeholder=" " required>
+                                        <span class="high"></span>
+                                        <line class="bar"></line>
+                                        <label>Firstname</label>
+                                    </div>
+                                    <div class="group">       
+                                        <input type="text" placeholder=" " >
+                                        <!-- <span class="high"></span> -->
+                                        <line class="bar"></line>
+                                        <label>Lastname</label>
                                     </div>
                                   </div>
                                   <div class="col">
@@ -560,13 +645,23 @@
                                         <label>Confirm Password</label>
                                     </div>
                                   </div>
-                                  <div push><input submit type="submit" value="Sign Up"></div> 
                                 </form>
+                              </wrap>
+                            </scroller>
+                            <div push class="col">
+                              <input submit type="submit" value="Sign Up">
                             </div>
                           </div>
-                        </scroller>
                       </div>
                     </div>
+                     <div name="test" class="main">
+                        <div class="column">
+                            <section>
+                                <scroller vertical>
+
+                                </scroller>
+                            </section>
+                        </div>
                 </wrapper>
             </wrapper>
         </container>
