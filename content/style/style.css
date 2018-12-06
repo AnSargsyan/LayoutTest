@@ -62,6 +62,10 @@ section[small] {
     flex: 1;
 }
 
+div[some] {
+    display: flex;
+}
+
 p {
     font-size: 12px;
 }
