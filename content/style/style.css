@@ -201,22 +201,24 @@ titleBox {
     flex: 1;
     align-items: center;
     display: flex;
-    background-color: greenyellow;
+    background-color: #2b3844;
 }
 titleBox p {
     font-size: 16px;
-    margin: 10px;
+    margin: 0 20px;
 }
 
 textBox p {
-    margin: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    box-shadow: inset 0px -1px 0px 0px #ffffff0f;
 }
 
 textBox {
     flex: 2;
     align-items: center;
     display: flex;
-    background-color: #34699a;
+    background-color: #2b3844;
 }
 
 .container {
