@@ -235,6 +235,7 @@ div[largebox], div[largebox] input {
 
 .col {
     display: flex;
+    flex-wrap: wrap;
     flex-shrink: 0;
     overflow: hidden;
 }
@@ -248,10 +249,11 @@ form {
 .group { 
     display: flex;
     position: relative;
+    min-width: 110px;
     margin: 15px;
     align-items: center;
     height: 40px;
-    width: 100%;
+    flex-grow: 1;
     box-shadow: 0px 1px 0px 0px #e6dddd;
 }
 
@@ -352,22 +354,21 @@ input:not([placeholder=' ']):placeholder-shown ~ label {
     opacity: 0;
 }
 
-
+/* 
 @media screen and (max-width: 1200px) {
     div[small] .col {
-        flex-direction: column;
-        transition: 2s ease-in-out;
+        flex-wrap: wrap;
+
     }
 }
+@media screen and (max-width: 1000px) {
+    div[large] .col {
+        flex-wrap: wrap;
+    }
+} */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     div[formbox] {
         flex-direction: column-reverse;
-    }
-}
-@media screen and (max-width: 500px) {
-    div[large] .col {
-        flex-direction: column;
-        transition: 2s ease-in-out;
     }
 }
