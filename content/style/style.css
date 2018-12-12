@@ -109,7 +109,7 @@ navigation {
     display: flex;
     flex-shrink: 0;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 navigation #nav_item li {
@@ -134,7 +134,7 @@ navigation li:hover {
     background-color: #e67556;
 }
 
-navigation li:active, input[type=submit]:active  {
+navigation li:active, input[type=submit]:active, .nav_menu p:active  {
     transform: translateY(1px);
 
 }
@@ -161,64 +161,64 @@ navigation li:active, input[type=submit]:active  {
 
 .main[home] navigation {
     background-color: transparent;
-    margin: 15px;
 }
 
 box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
     height: 300px;
-    flex-grow: 1;
-    margin: 15px;
+    border-radius: 15px;
     overflow: hidden;
-    border-radius: 10px;
-    /* background-color: #fff; */
+    background-color: #2b3844;
+    cursor: pointer;
+}
+
+box:hover {
+    background-color: #475765;
+    transition: .012s;
+}
+
+box:active imageBox {
+    height: 60%;
+    transition: .012s;
+}
+
+item {
+    display: flex;
+    flex-shrink: 0;
+    /* flex-grow: 1; */
+    width: 20%;
+    min-width: 200px;
+    flex-wrap: wrap;
+    padding: 15px;
 }
 
 imageBox {
-    flex: 3;
-    display: flex;
-    height: 100%;
-    width: 100%;
+    display: block;
+    height: 55%;
 	background-repeat: no-repeat;
 	background-size: cover;
-    background-color: #fff;
     background-position: center;
 }
 
-imageBox[one] {background-image: url(../image/denys.jpg);     background-color: transparent;}
-
-imageBox[two] {background-image: url(../image/alex.jpg);     background-color: transparent;}
-
-imageBox[three] {background-image: url(../image/banter.jpg);     background-color: transparent;}
-
-imageBox[four] {background-image: url(../image/james.jpg);     background-color: transparent;}
-
-imageBox[five] {background-image: url(../image/alexandre.jpg);     background-color: transparent;}
-
-titleBox {
-    flex: 1;
-    align-items: center;
+titleBox, textBox {
     display: flex;
-    background-color: #2b3844;
 }
 titleBox p {
     font-size: 16px;
-    margin: 0 20px;
+    white-space: nowrap; 
 }
 
 textBox p {
-    margin: 0 10px;
-    padding: 10px;
-    box-shadow: inset 0px -1px 0px 0px #ffffff0f;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+    overflow: hidden;
 }
 
-textBox {
-    flex: 2;
-    align-items: center;
-    display: flex;
-    background-color: #2b3844;
+textBox p, titleBox p 
+ {
+    padding: 20px 20px 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container {
@@ -263,8 +263,7 @@ textBox {
 
 .nav_menu p {
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    padding: 20px 50px;
     box-shadow: inset 0px -1px 0px 0px #ffffff05;
 }
 
@@ -278,6 +277,7 @@ textBox {
 .main[home] .column {
     border-radius: none;
     margin: 0 15px;
+    flex-wrap: wrap;
 }
 
 div[formbox] {
@@ -345,9 +345,35 @@ form {
     box-shadow: inset 0px -1px 0px 0px #e6dddd;
 }
 
+.group[search] {
+    height: 45px;
+    box-shadow: none;
+    border: 1px solid #ffffff54;
+    border-radius: 10px;
+}
+
+.group[search] input {
+    font-size: 14px; 
+    color: #FFF;
+}
+
+.group[search] input:placeholder-shown ~ label {
+    transform: none; 
+    color: #ffffffd1;
+}
+
+.group[search] Label {
+    color: #d84a24;
+    font-size: 15px;
+}
+
+.group[search] input:focus .group[search] {
+    border-color: #d84a24;
+}
+
 input {
     font-size: 12px; 
-    padding: 0 5px; 
+    padding: 0 10px; 
     display: flex;
     border: none;
     width: 100%;
@@ -422,7 +448,7 @@ label {
     position: absolute;
     pointer-events: none;
     height: 50%;
-    padding: 0 5px;
+    padding: 0 10px;
     transform: translateY(-150%) scale(.85);
     transform-origin: left;
     transition: .2s ease all;
