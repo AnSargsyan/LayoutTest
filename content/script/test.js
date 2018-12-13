@@ -28,6 +28,19 @@ window.onload = function () {
             $(tab_item[index]).attr('selected', '')
             
         }
+   }
+
+    $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#mySearch item").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    });
+   
+}
+// console.log($('[myId="home"]')[0]);
+
+      
         // function select() {
 		// 	for(let i = 0;  i < tab_item.length; i++) {
 
@@ -41,11 +54,3 @@ window.onload = function () {
 		// 	        }
 		//     }
 	 	// }
-   }
-   
-}
-// console.log($('[myId="home"]')[0]);
-
-
-
-
