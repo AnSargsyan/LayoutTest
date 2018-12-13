@@ -37,7 +37,15 @@ ul, .main[selected] {
 }
 
 i {
-    color: #202c36;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #fff;
+}
+div[search] i {
+    right: 5px;
+    left: auto;
+    top: 11px;
 }
 
 section {
@@ -67,6 +75,7 @@ section[small] {
 }
 
 p {
+    position: relative;
     font-size: 12px;
 }
 
