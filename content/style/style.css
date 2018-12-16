@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 html, body, main {
@@ -19,7 +19,7 @@ html, body, main {
 
 main {
     display: flex;
-    padding: 20px 100px;
+    padding: 3%;
     background-color: #e4e8f3;
 }
 
@@ -37,13 +37,20 @@ ul, .main[selected] {
     display: flex;
 }
 
-i {
-    position: absolute;
-    left: 15px;
-    font-size: 21px;
-    top: 18px;
-    color: #ffffff61;
+.nav_menu ul {
+    justify-content: center;
+    align-items: center;
 }
+li[marked] {
+    box-shadow: inset 3px 0 0px 0px #d84a24ad;
+    background-color: hsla(209, 19%, 31%, 0.65);
+}
+
+li[marked] i {
+    color: #d84a24cc;
+    opacity: 1;
+}
+
 div[search] i {
     right: auto;
     top: 12px;
@@ -92,6 +99,7 @@ wrap {
 }
 
 logo {
+    width: 200px;
     padding: 10px;
     display: flex;
     flex-shrink: 0; 
@@ -112,12 +120,21 @@ container {
     overflow: hidden;
     height: 100%;
     width: 100%;
-    box-shadow: 0 1px 50px #00020487;
+    box-shadow: 0 50px 200px rgba(47, 57, 66, 0.56);
 }
 
 scroller {
     overflow: auto;
     width: 100%;
+    height: 100%;
+}
+
+scroller::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
 }
 
 navigation {
@@ -126,35 +143,37 @@ navigation {
     /* justify-content: center; */
 }
 header navigation {
-    justify-content: center;
+    /* justify-content: center; */
     width: 100%;
 }
 
-navigation #nav_item li {
+li {
     display: flex;
+    align-items: center;
+    list-style-type: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+navigation #nav_item li {
     height: 30px;
     font-size: 14px;
     width: 80px;
     margin: 0 10px;
     justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    cursor: pointer;
-    user-select: none;
     border-radius: 30px;
 }
 
-navigation li[selected] {
+navigation #nav_item li[selected] {
     background-color: #d84a24;
 }
 
-navigation li:hover {
+navigation #nav_item li:hover {
     background-color: #e67556;
 }
 
-navigation li:active, input[type=submit]:active, .nav_menu p:active  {
+navigation #nav_item li:active, input[type=submit]:active, .nav_menu li:active  {
     transform: translateY(1px);
-
 }
 
 .tab {
@@ -185,8 +204,13 @@ navigation li:active, input[type=submit]:active, .nav_menu p:active  {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    min-width: 155px;
+    min-width: 200px;
     padding: 100px 0 0 0;
+}
+
+.boxContainer {
+    display: flex;
+    flex-grow: 1;
 }
 
 box {
@@ -194,21 +218,21 @@ box {
     overflow: hidden;
     background-color: #2b3844;
     cursor: pointer;
-    box-shadow: 0 1px 50px #bfbfbf0d;
+    transition: 0.125s;
 }
 
 box:hover {
-    background-color: #475765;
-    transition: .012s;
+    background-color: hsla(209, 19%, 31%, 0.92);
+    box-shadow: 0 5px 30px rgba(6, 8, 10, 0.22);
 }
 
 box:hover wrapimage {
-    opacity: .8;
+    transform: scale(1.05);
+    filter: brightness(1.3);
 }
 
 box:active wrapimage {
-    transform: scale(1.2);
-    transition: 0.125s;
+    transform: scale(1);
 }
 
 item {
@@ -236,13 +260,18 @@ wrapImage {
 imageBox {
     position: relative;
     display: block;
-    /* height: 165px; */
+    overflow: hidden;
     padding-top: 56.25%;
+}
+
+textteg {
+        display: flex;
+    flex-direction: column;
+    padding: 25px;
 }
 
 titleBox {
     display: flex;
-    padding: 20px 20px 0 40px;
 }
 
 titleBox p {
@@ -258,7 +287,7 @@ textBox p {
     overflow: hidden;
 }
 textBox {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 ratingBox, textBox {
@@ -267,33 +296,23 @@ ratingBox, textBox {
 }
 
 ratingBox {
-    padding: 30px 0;
     justify-content: center;
 }
 
 ratingBox .bar {
-        transform: none;
-        top: 0;
-        width: 80%;
-        background: #ffffff14;
+    transform: none;
+    background: #ffffff14;
 }
 
 box p 
 {
     overflow: hidden;
     text-overflow: ellipsis;
+    user-select: none;
 }
 
 .container {
     padding: 10px;
-}
-.main[home] wrapper {
-    flex: 1;
-}
-
-.boxContainer {
-    flex: 5;
-    display: flex;
 }
 
 .main navigation {
@@ -304,30 +323,37 @@ box p
 
 .main navigation p {
     font-size: 20px;
+    color: #fff;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    flex: 1;
     background: #2b3844;
     color: #fff;
-    box-shadow: inset -1px 0px 0px 0px #ffffff08;
+    /* box-shadow: inset -1px 0px 0px 0px #ffffff08; */
     user-select: none;
 }
 
-.menu p {
+.menu li {
     padding: 15px;
     font-size: 13px;
-    color: #ffffffd9;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.nav_menu p:hover {
-   background-color: #ffffff38;
+.nav_menu li:hover {
+    /* box-shadow: inset 3px 0 0px 0px #ffffffa1; */
+    background-color: hsla(209, 16%, 34%, 0.83);
+
+}
+.nav_menu li:hover i {
+    opacity: 1;
+
 }
 
-.nav_menu p {
-    padding: 25px 5px 25px 50px;
+.nav_menu i {
+    padding: 10px;
+    opacity: .5;
 }
 
 .column {
@@ -418,7 +444,7 @@ form {
 .group[search] input {
     font-size: 14px; 
     color: #FFF;
-    padding: 0 50px;
+    padding: 0 25px;
 }
 
 .group[search] input:placeholder-shown ~ label {
@@ -551,7 +577,7 @@ input:not([placeholder=' ']):placeholder-shown ~ label {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
     item {
         width: 100%;
     }
@@ -559,4 +585,15 @@ input:not([placeholder=' ']):placeholder-shown ~ label {
         flex-direction: column-reverse;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .nav_menu {
+        min-width: 50px;
+    }
+
+    text {
+        display: none;
+    }
+}
+
 
