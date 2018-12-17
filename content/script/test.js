@@ -29,7 +29,7 @@ window.onload = function () {
         }
     }
     var nav_menu = $('ul.nav_menu').children();
-    console.log(nav_menu);
+    // console.log(nav_menu);
 
     nav_menu.click(function(event){
         nav_menu.removeAttr('marked', 'marked');

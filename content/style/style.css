@@ -497,6 +497,22 @@ line  {
     transition: .2s ease all; 
 }
 
+user {
+    display: flex;
+    margin: 20px 0 0 0;
+}
+
+userPic {
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #ffffffc4;
+    margin: 0 -5px;
+}
+
 div[small] .bar {
     background: #801d03;
 }
