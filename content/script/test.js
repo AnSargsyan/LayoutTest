@@ -25,6 +25,7 @@ window.onload = function () {
             var index = myArr.indexOf(e.currentTarget);
             counter = index;
             $(tab_item[index]).attr('selected', '')
+            // $('#ppp').removeClass("open-menu")
             
         }
     }
@@ -44,6 +45,13 @@ window.onload = function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+
+
+    (function($) {
+        $("#toggle").click(function() {
+          $('body').toggleClass("open-menu");
+        });
+      })(jQuery);
    
 }
 // console.log($('[myId="home"]')[0]);

@@ -30,7 +30,8 @@ header {
     color: #fff;
     box-shadow: inset 0px -1px 0px 0px #ffffff05;
     user-select: none;
-    padding: 10px;
+    /* padding: 10px; */
+    z-index: 1;
 }
 
 ul, .main[selected] {
@@ -113,6 +114,7 @@ wrapper {
 }
 
 container {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: #2b3844;
@@ -121,6 +123,43 @@ container {
     height: 100%;
     width: 100%;
     box-shadow: 0 50px 300px rgba(47, 57, 66, 0.63);
+}
+
+toggle {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* #toggle {
+    position: fixed;
+    right: 60px;
+} */
+
+#toggle .icon-bar {
+    background: #fff;
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+    margin-top: 4px;
+    transition: all 700ms cubic-bezier(0.46, 0, 0, 0.79);
+}
+#mobileMenu {
+    transition: all 700ms cubic-bezier(0.46, 0, 0, 0.79);
+}
+.open-menu #ppp {
+    top: 72px;
+    /* padding: 5px; */
+    transform: translateY(0%);
+    background-color: #2b3844;
+}
+top {
+    padding: 10px;
+    background-color: #2b3844;
+    z-index: 1;
+    display: flex;
 }
 
 scroller {
@@ -145,6 +184,7 @@ navigation {
 header navigation {
     /* justify-content: center; */
     width: 100%;
+    transition: all 700ms cubic-bezier(0.46, 0, 0, 0.79);
 }
 
 li {
@@ -729,14 +769,37 @@ section[gridwrap] {
     item {
         width: 50%;
     }
+
+    toggle {
+        display: flex;
+    }
 }
 
 @media screen and (max-width: 500px) {
-    item {
+    item, top, #ppp, #mobileMenu, #nav_item, #nav_item ul {
         width: 100%;
     }
     div[formbox] {
         flex-direction: column-reverse;
+    }
+    
+    #nav_item {
+        flex-direction: column;
+    }
+    header {
+        flex-direction: column;
+    }
+    #ppp {
+        transform: translateY(-150%);
+        position: absolute;
+    }
+
+    navigation #nav_item li {
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        justify-content: right;
     }
 }
 
