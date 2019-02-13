@@ -46,12 +46,25 @@ window.onload = function () {
         });
     });
 
-
-    (function($) {
+    // setTimeout(function() {
         $("#toggle").click(function() {
-          $('body').toggleClass("open-menu");
+            $('body').toggleClass("open-menu");          
         });
-      })(jQuery);
+    // }, 1500);
+
+    $(document).click(function () {
+      if(document.activeElement.id != "toggle" ){
+
+        $('body').removeClass("open-menu");
+        $('#toggle_line').removeClass("on");
+      }
+
+    });
+
+    $("#toggle_line").click(function() {
+        $(this).toggleClass("on");
+      });
+
    
 }
 // console.log($('[myId="home"]')[0]);
